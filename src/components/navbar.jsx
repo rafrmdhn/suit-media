@@ -3,8 +3,8 @@ import Logo from "../assets/img/logo-suitmedia.png";
 
 const Navbar = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
-    const [isScrolled, setIsScrolled] = useState(true);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Add state for menu toggle
 
     useEffect(() => {
         const handleScroll = () => {
