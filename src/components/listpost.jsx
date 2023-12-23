@@ -100,6 +100,8 @@ const ListPost = () => {
             year: "numeric",
             });
 
+            const smallImage = post.small_image && post.small_image.length > 0 ? post.small_image[0] : null;
+
             return (
                 <div
                   key={post.id}
@@ -107,12 +109,14 @@ const ListPost = () => {
                 >
                   <a href={post.link} className="cursor-pointer">
                     <figure>
+                    {smallImage && (
                       <img
-                        src={`${post.small_image[0].url}?auto=format&fit=crop&w=400&q=50`}
+                        src={`${smallImage.url}?auto=format&fit=crop&w=400&q=50`}
                         alt={post.title}
                         className="rounded-t h-72 w-full object-cover"
                         loading="lazy"
                       />
+                      )}
                       <figcaption className="p-4">
                         <div className="flex justify-between items-center mb-4">
                           <p className="text-sm text-gray-500">{formattedDate}</p> 
